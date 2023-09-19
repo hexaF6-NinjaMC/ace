@@ -9,6 +9,7 @@ function run() {
   localStorage.setItem('js_code', jsCode.value);
   result.contentDocument.body.setHTML(`<style>${localStorage.css_code}</style>` + localStorage.html_code);
   result.contentWindow.eval(localStorage.js_code);
+  console.warn = () => {};
 }
 
 htmlCode.onkeyup = () => run();
