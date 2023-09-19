@@ -7,7 +7,7 @@ function run() {
   localStorage.setItem('html_code', htmlCode.value);
   localStorage.setItem('css_code', cssCode.value);
   localStorage.setItem('js_code', jsCode.value);
-  result.contentDocument.setHTML(`<style>${localStorage.css_code}</style>` + localStorage.html_code);
+  result.contentDocument.body.setHTML(`<style>${localStorage.css_code}</style>` + localStorage.html_code);
   result.contentWindow.eval(localStorage.js_code);
 }
 
