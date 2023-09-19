@@ -20,6 +20,11 @@ body {
   align-items: center;
 }
 
+header, footer {
+  background-color: var(--light-blue);
+  color: white;
+}
+
 .code-editor {
   width: 90vw;
   height: 90vh;
