@@ -27,6 +27,7 @@ main {
 header, footer {
   background-color: var(--light-blue);
   color: white;
+  text-align: center;
 }
 
 .code-editor {
