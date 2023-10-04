@@ -2,7 +2,9 @@ const htmlCode = document.querySelector('.html-code textarea');
 const cssCode = document.querySelector('.css-code textarea');
 const jsCode = document.querySelector('.js-code textarea');
 const result = document.querySelector('#result');
-let funcJS = Function(`console.log(${localStorage.js_code}); return (${localStorage.js_code})`);
+let funcJS = () => {
+  console.log(${localStorage.js_code});
+};
 
 function run() {
   localStorage.setItem('html_code', htmlCode.value);
