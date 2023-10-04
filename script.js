@@ -9,7 +9,7 @@ function run() {
   localStorage.setItem('css_code', cssCode.value);
   localStorage.setItem('js_code', jsCode.value);
   result.contentDocument.body.setHTML(`<style>${localStorage.css_code}</style>` + localStorage.html_code);
-  funcJS.bind(result.contentWindow);
+  funcJS.call(result.contentWindow);
 }
 
 htmlCode.onkeyup = () => run();
@@ -37,5 +37,5 @@ if (localStorage.js_code == undefined) {
 
 window.onload = () => {
   result.contentDocument.body.setHTML(`<style>${cssCode.value}</style>` + htmlCode.value);
-  funcJS.bind(result.contentWindow);
+  funcJS.call(result.contentWindow);
 };
