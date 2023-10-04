@@ -2,16 +2,14 @@ const htmlCode = document.querySelector('.html-code textarea');
 const cssCode = document.querySelector('.css-code textarea');
 const jsCode = document.querySelector('.js-code textarea');
 const result = document.querySelector('#result');
-let funcJS = () => {
-  console.log(localStorage.js_code);
-};
 
 function run() {
   localStorage.setItem('html_code', htmlCode.value);
   localStorage.setItem('css_code', cssCode.value);
   localStorage.setItem('js_code', jsCode.value);
+  console.clear();
   result.contentDocument.body.setHTML(`<style>${localStorage.css_code}</style>` + localStorage.html_code);
-  funcJS.call(result.contentWindow);
+  result.contentWindow.eval(localStorage.js_code);
 }
 
 htmlCode.onkeyup = () => run();
@@ -36,8 +34,7 @@ if (localStorage.js_code == undefined) {
   jsCode.value = localStorage.js_code;
 }
 
-
 window.onload = () => {
   result.contentDocument.body.setHTML(`<style>${cssCode.value}</style>` + htmlCode.value);
-  funcJS.call(result.contentWindow);
+  result.contentWindow.eval(localStorage.js_code);
 };
