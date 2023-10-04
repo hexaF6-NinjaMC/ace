@@ -3,7 +3,7 @@ const cssCode = document.querySelector('.css-code textarea');
 const jsCode = document.querySelector('.js-code textarea');
 const result = document.querySelector('#result');
 let funcJS = () => {
-  console.log(${localStorage.js_code});
+  console.log(localStorage.js_code);
 };
 
 function run() {
